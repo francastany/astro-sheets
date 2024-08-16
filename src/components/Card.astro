@@ -1,0 +1,38 @@
+---
+const { product } = Astro.props;
+const { imagen, nombre, precio, stock, estado } = product;
+---
+
+<article
+  class="transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-md duration-300 hover:scale-105 hover:shadow-lg"
+>
+  <img
+    class="h-48 w-full object-cover object-center"
+    src={imagen || "http://placehold.co/200"}
+    alt={nombre}
+  />
+  <div class="p-4">
+    <h2 class="mb-2 text-lg font-medium dark:text-white text-gray-900">
+      {nombre}
+    </h2>
+    <p class="mb-2 text-base dark:text-gray-300 text-gray-700">
+      Product description goes here.
+    </p>
+    <div class="flex mb-2 items-center">
+      <p class="mr-2 text-lg font-semibold text-gray-900 dark:text-white">
+        $ {precio}
+      </p>
+      <!-- 		<p class="text-base  font-medium text-gray-500 line-through dark:text-gray-300">$25.00</p> -->
+      <!-- 		<p class="ml-auto text-base font-medium text-green-500">20% off</p> -->
+    </div>
+    {
+      stock > 0 ? (
+        <small class="text-gray-400 font-medium">
+          ¡Quedan {stock} disponibles!
+        </small>
+      ) : (
+        <small class="text-red-400 font-medium">Sin Stock</small>
+      )
+    }
+  </div>
+</article>

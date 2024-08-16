@@ -1,0 +1,29 @@
+---
+import "../globals.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <!-- <link rel="stylesheet" href="../globals.css" /> -->
+    <title>Astro</title>
+  </head>
+  <body>
+    <header class="bg-slate-50 p-4 flex items-center justify-between">
+      <h1 class="text-xl font-semibold">Header</h1>
+      <nav>
+        <ul class="flex gap-4 items-center text-lg">
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
